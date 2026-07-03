@@ -1,5 +1,8 @@
 # Homebrew Tap for Cursor Control
 
+[![Release](https://img.shields.io/github/v/release/syedhy/Cursor-Control?label=release)](https://github.com/syedhy/Cursor-Control/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-13%2B-lightgrey.svg)](https://github.com/syedhy/Cursor-Control)
+
 This is the Homebrew tap for Cursor Control, a macOS menu bar utility for
 keyboard-driven cursor movement, clicking, and scrolling.
 
@@ -23,6 +26,16 @@ brew install --cask syedhy/cursor-control/cursor-control
 
 The fully-qualified cask path keeps Homebrew focused on this specific cask from
 the tap.
+
+## What Gets Installed
+
+Homebrew installs `Cursor Control.app` from the official GitHub Release zip:
+
+```text
+https://github.com/syedhy/Cursor-Control/releases/latest
+```
+
+The cask verifies the download with a SHA-256 checksum before installing.
 
 ## First Launch
 
@@ -57,4 +70,11 @@ To remove app preferences too:
 
 ```bash
 brew zap --cask syedhy/cursor-control/cursor-control
+```
+
+## Update
+
+```bash
+brew update
+brew upgrade --cask syedhy/cursor-control/cursor-control
 ```
