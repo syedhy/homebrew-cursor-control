@@ -3,20 +3,43 @@
 [![Release](https://img.shields.io/github/v/release/syedhy/Cursor-Control?label=release)](https://github.com/syedhy/Cursor-Control/releases/latest)
 [![macOS](https://img.shields.io/badge/macOS-13%2B-lightgrey.svg)](https://github.com/syedhy/Cursor-Control)
 
-This is the Homebrew tap for Cursor Control, a macOS menu bar utility for
-keyboard-driven cursor movement, clicking, and scrolling.
+This is the Homebrew tap for Cursor Control, a macOS menu bar app for moving the
+mouse cursor, clicking, dragging, and scrolling with the keyboard.
 
 Main app repository:
 
 https://github.com/syedhy/Cursor-Control
 
-Current release:
+## Before You Install
+
+Cursor Control is currently ad-hoc signed and not Apple-notarized because it is
+distributed without an Apple Developer Program account.
+
+On first launch, macOS may show a warning such as:
 
 ```text
-v1.0.0
+Apple could not verify "Cursor Control.app" is free of malware that may harm your Mac or compromise your privacy.
 ```
 
+Depending on your macOS version, the dialog may offer **Done**, **Cancel**, or
+**Move to Trash**. Do not click **Move to Trash** if you want to use the app.
+
+To open Cursor Control:
+
+1. Click **Done** or **Cancel** on the warning.
+2. Open **System Settings**.
+3. Go to **Privacy & Security**.
+4. Scroll to the message about `Cursor Control.app`.
+5. Click **Open Anyway**.
+6. Confirm **Open**.
+
+Some macOS versions may also allow Control-clicking `Cursor Control.app` in
+Applications and choosing **Open**, but **Privacy & Security > Open Anyway** is
+the most reliable method.
+
 ## Install
+
+This tap requires [Homebrew](https://brew.sh/) to be installed first.
 
 ```bash
 brew tap syedhy/cursor-control
@@ -24,41 +47,22 @@ brew trust --cask syedhy/cursor-control/cursor-control
 brew install --cask syedhy/cursor-control/cursor-control
 ```
 
-The fully-qualified cask path keeps Homebrew focused on this specific cask from
-the tap.
+The cask installs `Cursor Control.app` from the official GitHub Release ZIP and
+verifies the download with a SHA-256 checksum before installing.
 
-## What Gets Installed
+## After Installation
 
-Homebrew installs `Cursor Control.app` from the official GitHub Release zip:
+1. Open `Cursor Control.app` from Applications.
+2. Follow the first-launch steps above if macOS blocks it.
+3. Grant Accessibility access when prompted.
+4. Use the menu bar icon to open the guide, settings, or quit the app.
 
-```text
-https://github.com/syedhy/Cursor-Control/releases/latest
+## Update
+
+```bash
+brew update
+brew upgrade --cask syedhy/cursor-control/cursor-control
 ```
-
-The cask verifies the download with a SHA-256 checksum before installing.
-
-## First Launch
-
-Cursor Control is currently ad-hoc signed and not Apple-notarized because it is
-distributed without an Apple Developer Program account. On first launch, macOS
-may block the app.
-
-If macOS blocks it:
-
-1. Open System Settings.
-2. Go to Privacy & Security.
-3. Find the message about Cursor Control.
-4. Click Open Anyway.
-5. Confirm Open.
-
-Some macOS versions may also allow Control-clicking Cursor Control.app in
-Applications and choosing Open.
-
-## Accessibility
-
-Cursor Control requires Accessibility access to perform keyboard-requested
-cursor movement, clicking, and scrolling. Grant access when prompted, or enable
-it in System Settings > Privacy & Security > Accessibility.
 
 ## Uninstall
 
@@ -70,11 +74,4 @@ To remove app preferences too:
 
 ```bash
 brew zap --cask syedhy/cursor-control/cursor-control
-```
-
-## Update
-
-```bash
-brew update
-brew upgrade --cask syedhy/cursor-control/cursor-control
 ```
