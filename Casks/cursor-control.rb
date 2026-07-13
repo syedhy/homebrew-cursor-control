@@ -1,6 +1,6 @@
 cask "cursor-control" do
-  version "1.1.0"
-  sha256 "256fd3fe23666a17ff27d60a69f0994e599f5a1fd794eb68fcdd90f1181e81e6"
+  version "1.2.0"
+  sha256 "80209cc8b767dd6909d5508fb29c6dc69bff764d6cc04e1c6cdd53f506283945"
 
   url "https://github.com/syedhy/Cursor-Control/releases/download/v#{version}/CursorControl-#{version}-macOS.zip"
   name "Cursor Control"
